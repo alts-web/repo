@@ -313,7 +313,7 @@ let newTab = (url, uxor = true) => {
 	);
 	document.body.appendChild(frame);
 	frame.setAttribute('class', 'iframething');
-	frame.setAttribute('style', 'display:none background-image: url(https://nowg.eu.org/service/hvtrs8%2F-mmultcilowsvwknaoopwtkne.ha%7Bdmgqtcci.perl%2Ccm%2F%60rwh%2Cjrg)');
+        frame.setAttribute('style', 'display:none background: #252525');
 	frame.setAttribute('id', frameId);
 	frame.setAttribute('onload', `setInfo(` + frameId + `)`);
 
