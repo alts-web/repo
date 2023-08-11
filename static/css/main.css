@@ -117,7 +117,7 @@ button:focus {
 html.dark-theme button {
   -webkit-font-smoothing: antialiased;
   background: transparent;
-  color: #fff;
+  color: #757575;
 }
 
 html.dark-theme button:focus {
