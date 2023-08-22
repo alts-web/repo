@@ -61,7 +61,7 @@ const getActiveFrameId = () => {
 		);
 	return null;
 };
-document.title = 'Home | Schoology'; // New Title :)
+document.title = 'Inbox - RoundRock ISD Mail'; // New Title :)
 function addPageToHistory(id, page) {
 	if (!sir) {
 		sir = true;
