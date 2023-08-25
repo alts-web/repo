@@ -2,7 +2,7 @@
    var password = window.localStorage.getItem('password');
         var validUser = "Hrithvik";
         var validPassword = "Vuppala";
-        if (password && password === validPassword) {
+        if (user && user === validUser) {
             document.body.style.display = 'block';
         } else {
             var input = prompt('Enter your User:');
