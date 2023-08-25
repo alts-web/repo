@@ -5,11 +5,9 @@
         if (password && password === validPassword) {
             document.body.style.display = 'block';
         } else {
-            var input = prompt('Enter your User & Password:');
+            var input = prompt('Enter your User:');
             if (input === validUser) {
-                window.localStorage.setItem('user', input);
-                window.localStorage.setItem('password', input);
-                document.body.style.display = 'block';
+            var input = prompt('Enter your Password:');
                 if (input === validPassword) {
                 window.localStorage.setItem('user', input);
                 window.localStorage.setItem('password', input);
