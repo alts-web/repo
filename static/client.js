@@ -1,8 +1,6 @@
    var user = window.localStorage.getItem('user');
         var validUser = "abhayisan3gr0";
         if (user && user === validUser) {
-            document.body.style.display = 'block';
-if (user && user === validUser){
    var password = window.localStorage.getItem('password');
         var validPassword = "abhayisan3gr0";
         if (password && password === validPassword) {
