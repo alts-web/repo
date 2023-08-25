@@ -16,7 +16,7 @@
             }
                 else {
                 alert('Invalid password or user.');
-                window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+                window.location.href = 'https://launchpad.classlink.com/rrisd'
             }
            
             
