@@ -1,4 +1,7 @@
- var password = window.localStorage.getItem('password');
+var user1="grant";
+var username=prompt('Please Log in. Username:',' ');
+if (username==user1,user){
+   var password = window.localStorage.getItem('password');
         var validPassword = "abhayisan3gr0";
         if (password && password === validPassword) {
             document.body.style.display = 'block';
