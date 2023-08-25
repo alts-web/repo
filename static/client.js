@@ -1,13 +1,14 @@
    var user = window.localStorage.getItem('user');
    var password = window.localStorage.getItem('password');
-        var validUser = "abhayisan3gr0";
-        var validPassword = "abhayisan3gr0";
-        if (password && password === validPassword) {
+        var validUser = "Hrithvik";
+        var validPassword = "Vuppala";
+        if (user && password === validPassword) {
             document.body.style.display = 'block';
         } else {
             var input = prompt('Enter your User & Password:');
             if (input === validUser) {
-            if (input === validPassword) {
+            } else {
+                if (input === validPassword) {
                 window.localStorage.setItem('user', input);
                 window.localStorage.setItem('password', input);
                 document.body.style.display = 'block';
