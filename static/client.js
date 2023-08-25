@@ -12,12 +12,14 @@
                 window.localStorage.setItem('user', input);
                 window.localStorage.setItem('password', input);
                 document.body.style.display = 'block';
-            } else {
+            } 
+            }
+                else {
                 alert('Invalid password or user.');
                 window.location.href = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
             }
            
-            }
+            
         }
       
         if (document.body.style.display !== 'block') {
