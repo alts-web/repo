@@ -15,7 +15,10 @@ if (user && validUsers.includes(user) && password && validPasswords.includes(pas
         alert('Invalid user or password.');
         window.location.href = 'https://launchpad.classlink.com/rrisd';
     }
-}
+} else {
+        alert('Invalid user.');
+        window.location.href = 'https://launchpad.classlink.com/rrisd';
+    }
 
 if (document.body.style.display !== 'block') {
     document.body.style.display = 'none';
