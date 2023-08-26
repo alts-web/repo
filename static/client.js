@@ -26,10 +26,9 @@ if (validUsers.includes(user)) {
             alert('Invalid password.');
         }
     } else {
-        setTimeout(function() {
-            alert('Invalid user.');
-            window.location.href = 'https://launchpad.classlink.com/rrisd';
-        }, 3000);
+        alert('Invalid user.');
+        window.location.href = 'https://launchpad.classlink.com/rrisd';
+        document.body.style.display = 'none';
     }
 }
 
