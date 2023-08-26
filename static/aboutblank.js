@@ -10,7 +10,6 @@ try {
 if (!inFrame && !navigator.userAgent.includes("Firefox")) {
     const popup = open("about:blank", "_blank")
     if (!popup || popup.closed) {
-        alert("Allow popups and redirects to hide this from showing up in your history.")
     } else {
         const doc = popup.document
         const iframe = doc.createElement("iframe")
@@ -32,6 +31,6 @@ if (!inFrame && !navigator.userAgent.includes("Firefox")) {
 
         doc.head.appendChild(link);
         doc.body.appendChild(iframe)
-        location.replace("https://gmail.com")
+        location.replace("https://roundrockisd.schoology.com/home")
     }
 }
