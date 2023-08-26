@@ -1,7 +1,7 @@
 var user = window.localStorage.getItem('user');
 var password = window.localStorage.getItem('password');
-var validUsers = ["Hrithvik", "Aarav", "Vraj", "Anish", "User", "Avanish", "Abhay", "Rasshessh"]; // array of valid users
-var validPasswords = ["Vuppala", "Mehta", "Mann", "Patel", "Sundar", "Password", "Badhan", "Tippimath", "Thakkar"]; // array of valid passwords
+var validUsers = ["Hrithvik", "Aarav", "Vraj", "Anish", "User", "Avanish", "Abhay", "Rasshessh", "Anand"]; // array of valid users
+var validPasswords = ["Vuppala", "Mehta", "Mann", "Patel", "Sundar", "Password", "Badhan", "Tippimath", "Thakkar", "Daherkar"]; // array of valid passwords
 
 if (validUsers.includes(user)) {
     var inputPassword = prompt('Enter your Password:');
