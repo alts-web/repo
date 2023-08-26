@@ -11,6 +11,8 @@ if (validUsers.includes(user)) {
         document.body.style.display = 'block';
     } else {
         alert('Invalid password.');
+        window.location.href = 'https://launchpad.classlink.com/rrisd';
+        document.body.style.display = 'none';
     }
 } else {
     var inputUser = prompt('Enter your User:');
@@ -24,6 +26,8 @@ if (validUsers.includes(user)) {
             document.body.style.display = 'block';
         } else {
             alert('Invalid password.');
+            window.location.href = 'https://launchpad.classlink.com/rrisd';
+            document.body.style.display = 'none';
         }
     } else {
         alert('Invalid user.');
