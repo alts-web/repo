@@ -4,8 +4,8 @@ var validUsers = ["Hrithvik", "user2", "user3"]; // array of valid users
 var validPasswords = ["Vuppala", "password2", "password3"]; // array of valid passwords
 
 if (validUsers.includes(user)) {
-    var inputUserPassword = prompt('Enter your Username and Password (separated by a space):');
-    var [inputUser, inputPassword] = inputUserPassword.split(' ');
+    var inputUser = prompt('Enter your Username:');
+    var inputPassword = prompt('Enter your Password:');
   
     if (validPasswords.includes(inputPassword)) {
         window.localStorage.setItem('user', inputUser);
@@ -17,8 +17,8 @@ if (validUsers.includes(user)) {
         document.body.style.display = 'none';
     }
 } else {
-  var inputUserPassword = prompt('Enter your Username and Password (separated by a space):');
-  var [inputUser, inputPassword] = inputUserPassword.split(' ');
+  var inputUser = prompt('Enter your Username:');
+  var inputPassword = prompt('Enter your Password:');
   
   if (validUsers.includes(inputUser)) {
     if (validPasswords.includes(inputPassword)) {
