@@ -25,12 +25,12 @@ if (validUsers.includes(user)) {
             window.localStorage.setItem('password', inputPassword);
             document.body.style.display = 'block';
         } else {
-            alert('Invalid password.');
+            alert('Invalid Password.');
             window.location.href = 'https://launchpad.classlink.com/rrisd';
             document.body.style.display = 'none';
         }
     } else {
-        alert('Invalid user.');
+        alert('Invalid User. Request a Account at [coming soon!]');
         window.location.href = 'https://launchpad.classlink.com/rrisd';
         document.body.style.display = 'none';
     }
