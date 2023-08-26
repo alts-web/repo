@@ -14,7 +14,7 @@
                 document.body.style.display = 'block';
             } 
             else {
-            alert('Invalid password or user.');
+            alert('Invalid User or Password.');
             window.location.href = 'https://launchpad.classlink.com/rrisd'
             }
             }
