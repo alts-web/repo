@@ -1,4 +1,3 @@
-
 var user = window.localStorage.getItem('user');
 var password = window.localStorage.getItem('password');
 var validUsers = ["Hrithvik", "user2", "user3"]; // array of valid users
@@ -14,8 +13,24 @@ if (validUsers.includes(user)) {
         alert('Invalid password.');
     }
 } else {
-    alert('Not a valid user.');
-    window.location.href = 'https://launchpad.classlink.com/rrisd';
+    var inputUser = prompt('Enter your User:');
+  
+    if (validUsers.includes(inputUser)) {
+        var inputPassword = prompt('Enter your Password:');
+      
+        if (validPasswords.includes(inputPassword)) {
+            window.localStorage.setItem('user', inputUser);
+            window.localStorage.setItem('password', inputPassword);
+            document.body.style.display = 'block';
+        } else {
+            alert('Invalid password.');
+        }
+    } else {
+        setTimeout(function() {
+            alert('Invalid user.');
+            window.location.href = 'https://launchpad.classlink.com/rrisd';
+        }, 3000);
+    }
 }
 
 if (document.body.style.display !== 'block') {
