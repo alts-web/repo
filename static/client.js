@@ -13,12 +13,11 @@
                 window.localStorage.setItem('password', input);
                 document.body.style.display = 'block';
             } 
+            else {
+            alert('Invalid password or user.');
+            window.location.href = 'https://launchpad.classlink.com/rrisd'
             }
-                else {
-                alert('Invalid password or user.');
-                window.location.href = 'https://launchpad.classlink.com/rrisd'
             }
-           
             
         }
       
