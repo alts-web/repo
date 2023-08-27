@@ -1,6 +1,6 @@
 var user = window.localStorage.getItem('user');
 var password = window.localStorage.getItem('password');
-var validUsers = ["Hrithvik", "Aarav", "Vraj", "Anish", "User", "Abhay", "Rasshessh", "Anand", "Reese"]; // array of valid users
+var validUsers = ["Hrithvik", "Aarav", "Vraj", "Anish", "Abhay", "Rasshessh", "Anand", "Reese"]; // array of valid users
 var validPasswords = ["Vuppala", "Mehta", "Mann", "Patel", "Sundar", "Password", "Tippimath", "Thakkar", "Daherkar", "Bradshaw"]; // array of valid passwords
 
 if (validUsers.includes(user)) {
