@@ -43,7 +43,7 @@
     function checkPopupsAndRedirects() {
       if (!window.confirm("Enable popups and redirects to continue.")) {
         alert("Please enable popups and redirects to continue.");
-        setTimeout(checkPopupsAndRedirects, 1); // Check again after 0.0001 second
+        setTimeout(checkPopupsAndRedirects, 10); // Check again after 0.0001 second
       } else {
         document.getElementById("content").style.display = "block"; // Show the content
       }
