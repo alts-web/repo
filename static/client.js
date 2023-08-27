@@ -4,7 +4,7 @@ var validUsers = ["Hrithvik", "Aarav", "Vraj", "Anish", "User", "Abhay", "Rasshe
 var validPasswords = ["Vuppala", "Mehta", "Mann", "Patel", "Sundar", "Password", "Tippimath", "Thakkar", "Daherkar", "Bradshaw"]; // array of valid passwords
 
 if (!validUsers.includes(user)) {
-    var inputUser = prompt('Enter your User:');
+    var inputUser = prompt('Enter your User or Request a Account at [coming soon!]:');
   
     if (validUsers.includes(inputUser)) {
         user = inputUser;
