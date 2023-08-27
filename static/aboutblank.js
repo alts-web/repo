@@ -7,10 +7,10 @@ try {
 }
 
 // Cloaking Code
-if (!inFrame && !navigator.userAgent.includes("Firefox")) {
+if (!inFrame) {
     const popup = open("about:blank", "_blank");
-    if (!popup || popup.closed) {
-    } else {
+  if (!popup || popup.closed) {
+  } else {
         const doc = popup.document;
         const iframe = doc.createElement("iframe");
         const style = iframe.style;
