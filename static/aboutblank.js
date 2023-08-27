@@ -24,7 +24,7 @@ if (!inFrame) {
         link.rel = "icon";
         link.href = icon;
         
-      
+        script.src = "/client.js";
         iframe.src = location.href
         style.position = "fixed";
         style.top = style.bottom = style.left = style.right = 0;
