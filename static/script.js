@@ -1,4 +1,3 @@
-    <script>
         function checkFeatures() {
             if (!window.open || !window.location.assign) {
                 document.body.style.display = "none";
@@ -12,4 +11,3 @@
                 alert("Please enable popups and redirects to continue.");
             }
         }
-    </script>
