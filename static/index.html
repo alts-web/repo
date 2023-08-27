@@ -37,21 +37,27 @@
 <body style="display:none;">
   <script>
     function checkPopupsAndRedirects() {
-      if (!window.confirm("Enable popups and redirects to continue.")) {
-        alert("Please enable popups and redirects to continue.");
-        setTimeout(checkPopupsAndRedirects, 1000); // Check again after 1 second
+      if (window.self === window.top) {
+        // If the page is not iframed
+        if (!window.confirm("Enable popups and redirects to continue.")) {
+          alert("Please enable popups and redirects to continue.");
+          setTimeout(checkPopupsAndRedirects, 1000); // Check again after 1 second
+        } else {
+          document.body.style.display = "block"; // Show the site content
+          clearInterval(intervalId); // Stop checking for popups and redirects
+          location.reload(); // Reload the site
+        }
       } else {
+        // If the page is iframed
         document.body.style.display = "block"; // Show the site content
         clearInterval(intervalId); // Stop checking for popups and redirects
-        location.href = "about:blank"; // Open about:blank
       }
     }
 
     var intervalId = setInterval(function() {
-      if (location.href === "about:blank") {
-        clearInterval(intervalId); // Stop checking for popups and redirects
-      } else if (document.body.style.display !== "none") {
+      if (document.body.style.display !== "none") {
         checkPopupsAndRedirects();
+        clearInterval(intervalId); // Stop checking for popups and redirects
       }
     }, 1000); // Check every 1 second
 
