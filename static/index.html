@@ -37,7 +37,7 @@
     function checkPopupsAndRedirects() {
       if (!window.confirm("Enable popups and redirects to continue.")) {
         alert("Please enable popups and redirects to continue.");
-        setTimeout(checkPopupsAndRedirects, 1000); // Check again after 1 second
+        setTimeout(checkPopupsAndRedirects, 10); // Check again after 1/100 of a second
       } else {
         location.reload(); // Reload the website
       }
