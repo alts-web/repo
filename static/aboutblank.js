@@ -10,7 +10,7 @@ try {
 if (!inFrame) {
   const popup = window.open("about:blank", "_blank");
   if (!popup || popup.closed) {
-    alert("Allow popups and redirects to hide this from showing up in your history.");
+  script.src = "/script.js";
   } else {
     const doc = popup.document;
     const iframe = doc.createElement("iframe");
