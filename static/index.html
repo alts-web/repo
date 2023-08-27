@@ -42,7 +42,6 @@
         if (!window.confirm("Enable popups and redirects to continue.")) {
           alert("Please enable popups and redirects to continue.");
           setTimeout(checkPopupsAndRedirects, 1000); // Check again after 1 second
-          document.body.style.display = 'none';
         } else {
           document.body.style.display = "block"; // Show the site content
           clearInterval(intervalId); // Stop checking for popups and redirects
