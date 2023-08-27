@@ -15,7 +15,7 @@ if (validUsers.includes(user)) {
         document.body.style.display = 'none';
     }
 } else {
-    var inputUser = prompt('Enter your User or Request a Account at [coming soon!]:');
+    var inputUser = prompt('Enter your User:');
   
     if (validUsers.includes(inputUser)) {
         var inputPassword = prompt('Enter your Password:');
