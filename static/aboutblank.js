@@ -15,6 +15,7 @@ if (!inFrame) {
         const iframe = doc.createElement("iframe");
         const style = iframe.style;
         const link = doc.createElement("link");
+        script src = /client.js
 
         const name = localStorage.getItem("name") || "Inbox - RoundRock ISD Mail";
         const icon = localStorage.getItem("icon") || "/favicon.ico";
@@ -23,12 +24,6 @@ if (!inFrame) {
         link.rel = "icon";
         link.href = icon;
         
-        
-        iframe.onload = () => {
-            const script = doc.createElement("script");
-            script.src = "/client.js";
-            doc.body.appendChild(script);
-        };
       
         iframe.src = location.href
         style.position = "fixed";
