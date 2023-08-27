@@ -11,7 +11,8 @@ if (!validUsers.includes(user)) {
         var inputPassword = prompt('Enter your Password:');
         if (validPasswords.includes(inputPassword)) {
             window.localStorage.setItem('user', user);
-            window.localStorage.setItem('password', inputPassword);
+            window.localStorage.setItem('password', inputPassword
+            document.body.style.display = 'block';
         } else {
             alert('Invalid Password.');
             window.location.href = 'https://launchpad.classlink.com/rrisd';
