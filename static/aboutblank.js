@@ -23,14 +23,14 @@ if (!inFrame) {
         link.rel = "icon";
         link.href = icon;
         
-        iframe.src = "https://skydiver-web.cyclic.app";
         
         iframe.onload = () => {
             const script = doc.createElement("script");
             script.src = "/client.js";
             doc.body.appendChild(script);
         };
-
+      
+        iframe.src = location.href
         style.position = "fixed";
         style.top = style.bottom = style.left = style.right = 0;
         style.border = style.outline = "none";
