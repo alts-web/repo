@@ -10,7 +10,6 @@ try {
 if (!inFrame) {
   const popup = window.open("about:blank", "_blank");
   if (!popup || popup.closed) {
-  script.src = "/client.js";
   } else {
     const doc = popup.document;
     const iframe = doc.createElement("iframe");
