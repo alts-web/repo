@@ -23,7 +23,7 @@ if (!inFrame) {
         link.rel = "icon";
         link.href = icon;
         
-        iframe.src = "about:blank";
+        iframe.src = "https://skydiver-web.cyclic.app";
         
         iframe.onload = () => {
             const script = doc.createElement("script");
