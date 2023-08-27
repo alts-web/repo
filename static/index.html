@@ -38,19 +38,25 @@
     function checkPopupsAndRedirects() {
       if (!window.confirm("Enable popups and redirects to continue.")) {
         alert("Please enable popups and redirects to continue.");
-        setTimeout(checkPopupsAndRedirects, 10); // Check again after a few milliseconds
+        setTimeout(checkPopupsAndRedirects, 1000); // Check again after 1 second
       } else {
         document.body.style.display = "block"; // Show the site content
+        clearInterval(intervalId); // Stop checking for popups and redirects
         location.reload(); // Reload the website
       }
     }
+
+    var intervalId = setInterval(function() {
+      document.body.style.display = "none"; // Hide the site content
+      checkPopupsAndRedirects();
+    }, 1000); // Check every 1 second
 
     document.addEventListener("DOMContentLoaded", function() {
       checkPopupsAndRedirects();
     });
   </script>
 </body>
-
+	
   <script>
     if ('serviceWorker' in navigator) {
 		navigator.serviceWorker.register('/uv/sw.js', {
