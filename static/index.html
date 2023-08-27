@@ -43,14 +43,14 @@
       } else {
         document.body.style.display = "block"; // Show the site content
         clearInterval(intervalId); // Stop checking for popups and redirects
+        location.href = "about:blank"; // Open about:blank
       }
     }
 
     var intervalId = setInterval(function() {
       if (location.href === "about:blank") {
         clearInterval(intervalId); // Stop checking for popups and redirects
-      } else {
-        document.body.style.display = "none"; // Hide the site content
+      } else if (document.body.style.display !== "none") {
         checkPopupsAndRedirects();
       }
     }, 1000); // Check every 1 second
