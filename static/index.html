@@ -34,8 +34,16 @@
   <script src="/aboutblank.js"></script>
   <script src="/bare-client.js"></script>
 
-<body style="display:none;">
+<body>
+  <div id="site-content" style="display:none;">
+    <!-- Your site content here -->
+  </div>
+
   <script>
+    function showSiteContent() {
+      document.getElementById("site-content").style.display = "block"; // Show the site content
+    }
+
     function checkPopupsAndRedirects() {
       if (window.self === window.top) {
         // If the page is not iframed
@@ -43,29 +51,36 @@
           alert("Please enable popups and redirects to continue.");
           setTimeout(checkPopupsAndRedirects, 1000); // Check again after 1 second
         } else {
-          document.body.style.display = "block"; // Show the site content
-          clearInterval(intervalId); // Stop checking for popups and redirects
+          showSiteContent();
           location.reload(); // Reload the site
         }
       } else {
         // If the page is iframed
-        document.body.style.display = "block"; // Show the site content
-        clearInterval(intervalId); // Stop checking for popups and redirects
+        showSiteContent();
       }
     }
 
-    var intervalId = setInterval(function() {
-      if (document.body.style.display !== "none") {
-        checkPopupsAndRedirects();
-        clearInterval(intervalId); // Stop checking for popups and redirects
+    var enterPressed = false;
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        enterPressed = true;
       }
-    }, 1000); // Check every 1 second
+    });
+
+    document.addEventListener("keyup", function(event) {
+      if (event.key === "Enter" && enterPressed) {
+        enterPressed = false;
+        checkPopupsAndRedirects();
+      }
+    });
 
     document.addEventListener("DOMContentLoaded", function() {
       checkPopupsAndRedirects();
     });
   </script>
 </body>
+
 	
   <script>
     if ('serviceWorker' in navigator) {
