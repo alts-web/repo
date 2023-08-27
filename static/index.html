@@ -32,22 +32,20 @@
   <script src="/uv/uv.bundle.js"></script>
   <script src="/uv/uv.config.js"></script>
   <script src="/aboutblank.js"></script>
-  <script src="/script.js"></script>
   <script src="/bare-client.js"></script>
   <script>
-        function checkFeatures() {
-            if (!window.open || !window.location.assign) {
-                document.body.style.display = "none";
-            } else {
-                document.body.style.display = "block";
-            }
-        }
+    function checkPopupsAndRedirects() {
+      if (!window.confirm("Enable popups and redirects to continue.")) {
+        alert("Please enable popups and redirects to continue.");
+        setTimeout(checkPopupsAndRedirects, 1000); // Check again after 1 second
+      } else {
+        location.reload(); // Reload the website
+      }
+    }
 
-        function showAlert() {
-            if (!window.open || !window.location.assign) {
-                alert("Please enable popups and redirects to continue.");
-            }
-        }
+    document.addEventListener("DOMContentLoaded", function() {
+      checkPopupsAndRedirects();
+    });
   </script>
   <script>
     if ('serviceWorker' in navigator) {
