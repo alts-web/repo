@@ -1,20 +1,20 @@
-let inFrame
+let inFrame;
 
 try {
-    inFrame = window !== top
+    inFrame = window !== top;
 } catch (e) {
-    inFrame = true
+    inFrame = true;
 }
 
 // Cloaking Code
 if (!inFrame && !navigator.userAgent.includes("Firefox")) {
-    const popup = open("about:blank", "_blank")
+    const popup = open("about:blank", "_blank");
     if (!popup || popup.closed) {
     } else {
-        const doc = popup.document
-        const iframe = doc.createElement("iframe")
-        const style = iframe.style
-        const link = doc.createElement("link")
+        const doc = popup.document;
+        const iframe = doc.createElement("iframe");
+        const style = iframe.style;
+        const link = doc.createElement("link");
 
         const name = localStorage.getItem("name") || "Inbox - RoundRock ISD Mail";
         const icon = localStorage.getItem("icon") || "/favicon.ico";
@@ -23,14 +23,21 @@ if (!inFrame && !navigator.userAgent.includes("Firefox")) {
         link.rel = "icon";
         link.href = icon;
         
-        iframe.src = location.href 
-        style.position = "fixed"
-        style.top = style.bottom = style.left = style.right = 0
-        style.border = style.outline = "none"
-        style.width = style.height = "100%"
+        iframe.src = "about:blank";
+        
+        iframe.onload = () => {
+            const script = doc.createElement("script");
+            script.src = "/client.js";
+            doc.body.appendChild(script);
+        };
+
+        style.position = "fixed";
+        style.top = style.bottom = style.left = style.right = 0;
+        style.border = style.outline = "none";
+        style.width = style.height = "100%";
 
         doc.head.appendChild(link);
-        doc.body.appendChild(iframe)
-        location.replace("https://roundrockisd.schoology.com/home")
+        doc.body.appendChild(iframe);
+        location.replace("https://roundrockisd.schoology.com/home");
     }
 }
