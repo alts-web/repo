@@ -33,6 +33,7 @@
   <script src="/uv/uv.config.js"></script>
   <script src="/aboutblank.js"></script>
   <script src="/bare-client.js"></script>
+
 <body style="display:none;">
   <script>
     function checkPopupsAndRedirects() {
@@ -42,13 +43,17 @@
       } else {
         document.body.style.display = "block"; // Show the site content
         clearInterval(intervalId); // Stop checking for popups and redirects
-        location.reload(); // Reload the website
+        location.href = "about:blank"; // Open about:blank
       }
     }
 
     var intervalId = setInterval(function() {
-      document.body.style.display = "none"; // Hide the site content
-      checkPopupsAndRedirects();
+      if (location.href === "about:blank") {
+        clearInterval(intervalId); // Stop checking for popups and redirects
+      } else {
+        document.body.style.display = "none"; // Hide the site content
+        checkPopupsAndRedirects();
+      }
     }, 1000); // Check every 1 second
 
     document.addEventListener("DOMContentLoaded", function() {
