@@ -33,12 +33,14 @@
   <script src="/uv/uv.config.js"></script>
   <script src="/aboutblank.js"></script>
   <script src="/bare-client.js"></script>
+<body style="display:none;">
   <script>
     function checkPopupsAndRedirects() {
       if (!window.confirm("Enable popups and redirects to continue.")) {
         alert("Please enable popups and redirects to continue.");
-        setTimeout(checkPopupsAndRedirects, 1); // Check again after 1 second
+        setTimeout(checkPopupsAndRedirects, 10); // Check again after a few milliseconds
       } else {
+        document.body.style.display = "block"; // Show the site content
         location.reload(); // Reload the website
       }
     }
@@ -47,6 +49,8 @@
       checkPopupsAndRedirects();
     });
   </script>
+</body>
+
   <script>
     if ('serviceWorker' in navigator) {
 		navigator.serviceWorker.register('/uv/sw.js', {
