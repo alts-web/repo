@@ -10,7 +10,8 @@ try {
 if (!inFrame) {
   const popup = window.open("about:blank", "_blank");
   if (!popup || popup.closed) {
-  script.src = "/client.js";
+    // Handle case when popup is closed
+    console.log("Popup is closed");
   } else {
     const doc = popup.document;
     const iframe = doc.createElement("iframe");
@@ -25,7 +26,7 @@ if (!inFrame) {
     link.rel = "icon";
     link.href = icon;
     
-    iframe.src = "https://example.com" // Replace with the URL you want the iframe to load
+    iframe.src = "https://example.com"; // Replace with the URL you want the iframe to load
     style.position = "fixed";
     style.top = style.bottom = style.left = style.right = 0;
     style.border = style.outline = "none";
