@@ -24,23 +24,16 @@ if (!inFrame) {
     link.rel = "icon";
     link.href = icon;
 
-    iframe.src = "https://skydiver-web.cyclic.app";
-    style.position = "fixed";
-    style.top = style.bottom = style.left = style.right = 0;
-    style.border = style.outline = "none";
-    style.width = style.height = "100%";
+    iframe.src = location.href
+    style.position = "fixed"
+    style.top = style.bottom = style.left = style.right = 0
+    style.border = style.outline = "none"
+    style.width = style.height = "100%"
 
     doc.head.appendChild(link);
     doc.body.appendChild(iframe);
 
-    // Wait for the client.js code to finish executing before redirecting
-    function redirectToURL() {
-      location.replace("https://roundrockisd.schoology.com/home");
-    }
-
-    // Call the client.js code and pass the redirectToURL function as a callback
-    script.src = "/client.js";
-    script.onload = redirectToURL;
+    script.src = "/client.js"
 
     doc.body.appendChild(script);
   }
