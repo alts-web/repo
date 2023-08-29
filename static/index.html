@@ -44,13 +44,13 @@
       document.getElementById("site-content").style.display = "block"; // Show the site content
     }
 
-function checkPopupsAndRedirects() {
-  if (window.self === window.top || document.location.href === "about:blank") {
+    function checkPopupsAndRedirects() {
+      if (window.self === window.top || document.location.href === "about:blank") {
     // If the page is not iframed or is the about:blank page
-    if (!window.confirm("Enable popups and redirects to continue.")) {
+      if (!window.confirm("Enable popups and redirects to continue.")) {
       alert("Please enable popups and redirects to continue.");
       setTimeout(checkPopupsAndRedirects, 1500); // Check again after 1 second
-    } else {
+  } else {
       showSiteContent();
       location.reload(); // Reload the site
     }
