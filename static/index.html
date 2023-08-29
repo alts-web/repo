@@ -44,21 +44,21 @@
       document.getElementById("site-content").style.display = "block"; // Show the site content
     }
 
-    function checkPopupsAndRedirects() {
-      if (window.self === window.top) {
-        // If the page is not iframed
-        if (!window.confirm("Enable popups and redirects to continue.")) {
-          alert("Please enable popups and redirects to continue.");
-          setTimeout(checkPopupsAndRedirects, 1500); // Check again after 1 second
-        } else {
-          showSiteContent();
-          location.reload(); // Reload the site
-        }
-      } else {
-        // If the page is iframed
-        showSiteContent();
-      }
+function checkPopupsAndRedirects() {
+  if (window.self === window.top || document.location.href === "about:blank") {
+    // If the page is not iframed or is the about:blank page
+    if (!window.confirm("Enable popups and redirects to continue.")) {
+      alert("Please enable popups and redirects to continue.");
+      setTimeout(checkPopupsAndRedirects, 1500); // Check again after 1 second
+    } else {
+      showSiteContent();
+      location.reload(); // Reload the site
     }
+  } else {
+    // If the page is iframed
+    showSiteContent();
+  }
+}
 
     var enterPressed = false;
 
