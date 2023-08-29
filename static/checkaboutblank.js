@@ -4,7 +4,8 @@ function checkPopupsAndRedirects() {
     if (window.self === window.top) {
       // If the page is not iframed
       var popupInterval = setInterval(function() {
-        if (!window.confirm("Enable popups and redirects to continue.")) {
+        var userEnabledPopups = window.confirm("Enable popups and redirects to continue.");
+        if (!userEnabledPopups) {
           alert("Please enable popups and redirects to continue.");
         } else {
           clearInterval(popupInterval); // Stop showing the popup
