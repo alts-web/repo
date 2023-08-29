@@ -3,11 +3,11 @@ function checkPopupsAndRedirects() {
     // If the page is not about:blank
     if (window.self === window.top) {
       // If the page is not iframed
-      if (!window.confirm("Enable popups and redirects to continue.")) {
+      if (window.confirm("Enable popups and redirects to continue.")) {
+        document.body.style.display = "block"; // Show the site content
+      } else {
         alert("Please enable popups and redirects to continue.");
         setTimeout(checkPopupsAndRedirects, 1000); // Check again after 1 second
-      } else {
-        document.body.style.display = "block"; // Show the site content
       }
     } else {
       // If the page is iframed
@@ -33,5 +33,6 @@ document.addEventListener("keyup", function(event) {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
+  document.body.style.display = "none"; // Hide the site content by default
   checkPopupsAndRedirects();
 });
