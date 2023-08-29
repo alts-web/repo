@@ -25,7 +25,7 @@ if (!inFrame && !navigator.userAgent.includes("Firefox")) {
         link.rel = "icon";
         link.href = icon;
         
-        iframe.src = location.href
+        iframe.src = "https://www.example.com" // Replace with the URL you want the iframe to load
         script.src = "/client.js"
         style.position = "absolute" // Change from fixed to absolute
         style.top = "50px" // Adjust positioning to allow interaction with content underneath
