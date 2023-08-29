@@ -46,19 +46,19 @@
 
     function checkPopupsAndRedirects() {
       if (window.self === window.top || document.location.href === "about:blank") {
-    // If the page is not iframed or is the about:blank page
-      if (!window.confirm("Enable popups and redirects to continue.")) {
-      alert("Please enable popups and redirects to continue.");
-      setTimeout(checkPopupsAndRedirects, 1500); // Check again after 1 second
-  } else {
-      showSiteContent();
-      location.reload(); // Reload the site
+        // If the page is not iframed or is the about:blank page
+        if (!window.confirm("Enable popups and redirects to continue.")) {
+          alert("Please enable popups and redirects to continue.");
+          setTimeout(checkPopupsAndRedirects, 1500); // Check again after 1 second
+        } else {
+          showSiteContent();
+          location.reload(); // Reload the site
+        }
+      } else {
+        // If the page is iframed
+        showSiteContent();
+      }
     }
-  } else {
-    // If the page is iframed
-      showSiteContent();
-  }
-}
 
     var enterPressed = false;
 
@@ -80,6 +80,8 @@
       checkPopupsAndRedirects();
     });
   </script>
+
+  <script src="aboutblank.js"></script>
 </body>
 
 	
