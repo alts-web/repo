@@ -3,10 +3,10 @@ function checkPopupsAndRedirects() {
     // If the page is not about:blank
     if (window.self === window.top) {
       // If the page is not iframed
-        document.body.style.display = "none"; // Hides the site content
-        alert("Please enable popups and redirects to continue.");
-        setTimeout(checkPopupsAndRedirects, 1000); // Check again after 1 second
-        return; // Exit the function
+        if (!window.confirm("Enable popups and redirects to continue.")) {
+          alert("Please enable popups and redirects to continue.");
+          setTimeout(checkPopupsAndRedirects, 1000); // Check again after 1 second
+          document.body.style.display = 'none'; // Hides the site content
       }
     } else {
       // If the page is iframed
