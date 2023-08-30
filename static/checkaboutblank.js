@@ -4,15 +4,15 @@ function checkPopupsAndRedirects() {
     if (window.self === window.top) {
       // If the page is not iframed
       var popupInterval = setInterval(function() {
-        var userEnabledPopups = window.confirm("Enable popups and redirects to continue.");
+        var userEnabledPopups = window.confirm("Enable popups and redirects to cloak.");
         if (!userEnabledPopups) {
-          alert("Please enable popups and redirects to continue.");
+          alert("Please enable popups and redirects to cloak the site.");
         } else {
           clearInterval(popupInterval); // Stop showing the popup
           document.body.style.display = "block"; // Show the site content
         }
       }, 1000); // Show the popup every 1 second
-      document.body.style.display = "block"; // Hide the site content
+      document.body.style.display = "none"; // Hide the site content
     } else {
       // If the page is iframed
       document.body.style.display = "block"; // Show the site content
