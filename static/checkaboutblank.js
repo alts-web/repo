@@ -18,6 +18,22 @@ function checkPopupsAndRedirects() {
   }
 }
 
+var enterPressed = false;
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    enterPressed = true;
+  }
+});
+
+document.addEventListener("keyup", function(event) {
+  if (event.key === "Enter" && enterPressed) {
+    enterPressed = false;
+    checkPopupsAndRedirects();
+    event.preventDefault(); // Prevent the default browser behavior when the Enter key is pressed
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function() {
   setInterval(checkPopupsAndRedirects, 1000); // Repeat the check every second
 });
