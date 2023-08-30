@@ -12,7 +12,7 @@ function checkPopupsAndRedirects() {
           document.body.style.display = "block"; // Show the site content
         }
       }, 1000); // Show the popup every 1 second
-      document.body.style.display = "none"; // Hide the site content
+      document.body.style.display = "block"; // Hide the site content
     } else {
       // If the page is iframed
       document.body.style.display = "block"; // Show the site content
