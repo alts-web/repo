@@ -23,7 +23,6 @@ if (!inFrame) {
   link.rel = "icon";
   link.href = icon;
   
-  document.body.style.display = 'block';
   script.src = "/client.js"
   iframe.src = "https://s-web.cyclic.app"; // Replace with the URL you want the iframe to load
   style.position = "fixed";
