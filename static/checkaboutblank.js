@@ -11,11 +11,11 @@ function checkPopupsAndRedirects() {
       document.body.style.display = "none";
     } else {
       showSiteContent();
+      location.reload(); // Reload the website once the user enables popups and redirects
     }
   } else {
     // If the page is iframed
     showSiteContent();
-    location.reload(); // Reload the website once the user enables popups and redirects
   }
 }
 
