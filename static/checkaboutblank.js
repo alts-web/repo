@@ -10,8 +10,8 @@ function checkPopupsAndRedirects() {
       setTimeout(checkPopupsAndRedirects, 1000); // Check again after 1 second
       document.body.style.display = "none";
     } else {
-      window.location.reload(); // Reload the website once the user enables popups and redirects
       showSiteContent();
+      location.reload(); // Reload the website once the user enables popups and redirects
     }
   } else {
     // If the page is iframed
