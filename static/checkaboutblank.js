@@ -10,6 +10,7 @@ function checkPopupsAndRedirects() {
       setTimeout(checkPopupsAndRedirects, 1000); // Check again after 1 second
       document.body.style.display = "none";
     } else {
+      window.location.reload(); // Reload the website once the user enables popups and redirects
       showSiteContent();
     }
   } else {
@@ -37,4 +38,3 @@ document.addEventListener("keyup", function(event) {
 document.addEventListener("DOMContentLoaded", function() {
   setInterval(checkPopupsAndRedirects, 1000); // Repeat the check every second
 });
-
