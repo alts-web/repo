@@ -5,7 +5,7 @@ Basically a heavily modified faster version and its a spinoff called Skydiver-We
 
 125 Commits Later I Finally Finished. 
 
-Website: https://s-web.mooo.com
+Website: https://skydiver-web.mooo.com
 
 Request an account at [Coming Soon!]
 _______________________________________
