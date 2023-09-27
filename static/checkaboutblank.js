@@ -22,14 +22,14 @@ function checkPopupsAndRedirects() {
       if (confirmationResult) {
         // Set the flag in localStorage to "true" after displaying the popup
         localStorage.setItem('popupFlag', 'true');
+        // Open the site in about:blank only once after enabling popups and redirects
+        openSiteInAboutBlank();
       } else {
         // Do nothing here; the popup will keep showing
         return;
       }
     }
     
-    // Open the site in about:blank after enabling popups and redirects
-    openSiteInAboutBlank();
     // Reload the page once the user enables pop-ups and redirects and clicks "OK"
     location.reload();
   } else {
