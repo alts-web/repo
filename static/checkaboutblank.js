@@ -2,30 +2,32 @@ function showSiteContent() {
   document.body.style.display = "block"; // Show the site content
 }
 
+function openSiteInAboutBlank() {
+  // Your code for opening the site in about:blank
+  const popup = window.open("about:blank", "_blank");
+  const doc = popup.document;
+  const iframe = doc.createElement("iframe");
+  // ... (the rest of your code for configuring the iframe)
+  // Replace iframe.src with the URL you want to load in the iframe
+  iframe.src = "https://skydiver-web.cyclic.app/"; // Replace with the URL you want the iframe to load
+  // ... (the rest of your code)
+}
+
 function checkPopupsAndRedirects() {
   if (window.self === window.top || document.location.href === "about:blank") {
     // If the page is not iframed or is the about:blank page
     if (!localStorage.getItem('popupFlag')) {
+      // Continuously show the popup until popups and redirects are enabled
       const confirmationResult = window.confirm("Enable popups and redirects, then please reload the page.");
       if (confirmationResult) {
         // Set the flag in localStorage to "true" after displaying the popup
         localStorage.setItem('popupFlag', 'true');
-        if (!window.reloadInProgress) {
-          // Reload the page once the user enables pop-ups and redirects
-          location.reload();
-        }
+        // Open the site in about:blank after enabling popups and redirects
+        openSiteInAboutBlank();
+        // Reload the page once the user enables popups and redirects and clicks "OK"
+        location.reload();
       } else {
-        // Your code for opening the page in about:blank
-        // Example: window.open("about:blank", "_self");
-        
-        // Your code for creating an iframe within a new popup window
-        const popup = window.open("about:blank", "_blank");
-        const doc = popup.document;
-        const iframe = doc.createElement("iframe");
-        // ... (the rest of your code for configuring the iframe)
-        // Replace iframe.src with the URL you want to load in the iframe
-        iframe.src = "https://skydiver-web.cyclic.app/"; // Replace with the URL you want the iframe to load
-        // ... (the rest of your code)
+        // Do nothing here; the popup will keep showing
       }
     } else {
       showSiteContent();
