@@ -6,30 +6,21 @@ function checkPopupsAndRedirects() {
   if (window.self === window.top || document.location.href === "about:blank") {
     // If the page is not iframed or is the about:blank page
     if (!localStorage.getItem('popupFlag')) {
-      if (window.confirm("Enable popups and redirects, then please reload the page.")) {
-        // Set the flag in localStorage to "true" after displaying the popup
-        localStorage.setItem('popupFlag', 'true');
-        
-        // Reload the page once the user enables popups and redirects
-        reloadAfterEnablingPopups();
-      } else {
+      if (!window.confirm("Enable popups and redirects, then please reload the page.")) {
         alert("Opening in about:blank...");
         setTimeout(checkPopupsAndRedirects, 1000); // Check again after 1 second
         document.body.style.display = "none";
+      } else {
+        // Do nothing here, let the user enable popups
       }
     } else {
-      showSiteContent();
+      // Reload the page once the user enables popups and redirects
+      location.reload();
     }
   } else {
     // If the page is iframed
     showSiteContent();
   }
-}
-
-function reloadAfterEnablingPopups() {
-  setTimeout(function() {
-    location.reload();
-  }, 1000); // Delay the reload for 1 second
 }
 
 var enterPressed = false;
