@@ -15,9 +15,7 @@ function checkPopupsAndRedirects() {
           location.reload();
         }
       } else {
-        alert("Opening in about:blank...");
-        setTimeout(checkPopupsAndRedirects, 1000); // Check again after 1 second
-        document.body.style.display = "none";
+        // Do nothing here, let the popup stay open
       }
     } else {
       showSiteContent();
