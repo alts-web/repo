@@ -6,7 +6,7 @@ function checkPopupsAndRedirects() {
   if (window.self === window.top || document.location.href === "about:blank") {
     // If the page is not iframed or is the about:blank page
     if (!localStorage.getItem('popupFlag')) {
-      if (!window.confirm("Enable popups and redirects, then please reload the page.")) {
+      if (!window.confirm("Enable popups and redirects, then select OK.")) {
         alert("Opening in about:blank...");
         setTimeout(checkPopupsAndRedirects, 1000); // Check again after 1 second
         document.body.style.display = "none";
