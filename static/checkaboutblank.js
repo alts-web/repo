@@ -17,16 +17,16 @@ function checkPopupsAndRedirects() {
   if (window.self === window.top || document.location.href === "about:blank") {
     // If the page is not iframed or is the about:blank page
     if (!localStorage.getItem('popupFlag')) {
-      // Continuously show the popup until popups and redirects are enabled
+      // Show the popup continuously until popups and redirects are enabled
       const confirmationResult = window.confirm("Enable popups and redirects, then please reload the page.");
       if (confirmationResult) {
         // Set the flag in localStorage to "true" after displaying the popup
         localStorage.setItem('popupFlag', 'true');
-        // Open the site in about:blank only once after enabling popups and redirects
-        openSiteInAboutBlank();
-        return; // Exit the function to prevent further checks
+        openSiteInAboutBlank(); // Execute the about:blank code after enabling popups and redirects
+        location.reload(); // Reload the page after enabling
+        return; // Exit the function
       } else {
-        // Do nothing here; the popup will keep showing
+        // Continue showing the popup if the user doesn't enable popups and redirects
         return;
       }
     }
