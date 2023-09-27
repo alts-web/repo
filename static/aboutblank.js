@@ -23,7 +23,7 @@ if (!inFrame) {
   link.rel = "icon";
   link.href = icon;
   
-  iframe.src = "https://password-qrzqf5blda-vp.a.run.app/"; // Replace with the URL you want the iframe to load
+  iframe.src = "https://skydiver-web.cyclic.app/"; // Replace with the URL you want the iframe to load
   style.position = "fixed";
   style.top = style.bottom = style.left = style.right = 0;
   style.border = style.outline = "none";
