@@ -10,16 +10,17 @@ function checkPopupsAndRedirects() {
       if (confirmationResult) {
         // Set the flag in localStorage to "true" after displaying the popup
         localStorage.setItem('popupFlag', 'true');
-        // Reload the page once the user enables pop-ups and redirects
-        location.reload();
+        if (!window.reloadInProgress) {
+          // Reload the page once the user enables pop-ups and redirects
+          location.reload();
+        }
       } else {
         alert("Opening in about:blank...");
         setTimeout(checkPopupsAndRedirects, 1000); // Check again after 1 second
         document.body.style.display = "none";
       }
     } else {
-      // Reload the page once the user enables pop-ups and redirects
-      location.reload();
+      showSiteContent();
     }
   } else {
     // If the page is iframed
