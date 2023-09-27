@@ -14,7 +14,8 @@ function checkPopupsAndRedirects() {
         // Set the flag in localStorage to "true" after displaying the popup
         localStorage.setItem('popupFlag', 'true');
       } else {
-        showSiteContent();
+        // Reload the page once the user enables popups and redirects
+        location.reload();
       }
     } else {
       showSiteContent();
