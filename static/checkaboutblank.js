@@ -22,10 +22,8 @@ function checkPopupsAndRedirects() {
       if (confirmationResult) {
         // Set the flag in localStorage to "true" after displaying the popup
         localStorage.setItem('popupFlag', 'true');
-        // Open the site in about:blank after enabling popups and redirects
-        openSiteInAboutBlank();
-      } else {
-        // Do nothing here; the popup will keep showing
+        // Reload the page once the user enables popups and redirects and clicks "OK"
+        location.reload();
       }
     } else {
       showSiteContent();
