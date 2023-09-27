@@ -24,18 +24,16 @@ function checkPopupsAndRedirects() {
         localStorage.setItem('popupFlag', 'true');
         // Open the site in about:blank only once after enabling popups and redirects
         openSiteInAboutBlank();
+        return; // Exit the function to prevent further checks
       } else {
         // Do nothing here; the popup will keep showing
         return;
       }
     }
-    
-    // Reload the page once the user enables pop-ups and redirects and clicks "OK"
-    location.reload();
-  } else {
-    // If the page is iframed
-    showSiteContent();
   }
+
+  // If popups and redirects are enabled or if the page is iframed
+  showSiteContent();
 }
 
 var enterPressed = false;
