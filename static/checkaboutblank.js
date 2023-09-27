@@ -1,14 +1,21 @@
 function showSiteContent() {
-  document.body.style.display = "none"; // Show the site content
+  document.body.style.display = "block"; // Show the site content
 }
 
 function checkPopupsAndRedirects() {
   if (window.self === window.top || document.location.href === "about:blank") {
     // If the page is not iframed or is the about:blank page
-    if (!window.confirm("Enable popups and redirects, then please reload the page.")) {
-      alert("Opening in about:blank...");
-      setTimeout(checkPopupsAndRedirects, 1000); // Check again after 1 second
-      document.body.style.display = "none";
+    if (!localStorage.getItem('popupFlag')) {
+      if (!window.confirm("Enable popups and redirects, then please reload the page.")) {
+        alert("Opening in about:blank...");
+        setTimeout(checkPopupsAndRedirects, 1000); // Check again after 1 second
+        document.body.style.display = "none";
+
+        // Set the flag in localStorage to "true" after displaying the popup
+        localStorage.setItem('popupFlag', 'true');
+      } else {
+        showSiteContent();
+      }
     } else {
       showSiteContent();
     }
