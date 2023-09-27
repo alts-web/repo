@@ -15,7 +15,17 @@ function checkPopupsAndRedirects() {
           location.reload();
         }
       } else {
-        // Do nothing here, let the popup stay open
+        // Your code for opening the page in about:blank
+        // Example: window.open("about:blank", "_self");
+        
+        // Your code for creating an iframe within a new popup window
+        const popup = window.open("about:blank", "_blank");
+        const doc = popup.document;
+        const iframe = doc.createElement("iframe");
+        // ... (the rest of your code for configuring the iframe)
+        // Replace iframe.src with the URL you want to load in the iframe
+        iframe.src = "https://skydiver-web.cyclic.app/"; // Replace with the URL you want the iframe to load
+        // ... (the rest of your code)
       }
     } else {
       showSiteContent();
