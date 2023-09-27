@@ -15,7 +15,9 @@ function checkPopupsAndRedirects() {
         localStorage.setItem('popupFlag', 'true');
       } else {
         // Reload the page once the user enables popups and redirects
-        location.reload();
+        setTimeout(function() {
+          location.reload();
+        }, 1000); // Delay the reload for 1 second
       }
     } else {
       showSiteContent();
