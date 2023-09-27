@@ -6,10 +6,10 @@ function checkPopupsAndRedirects() {
   if (window.self === window.top || document.location.href === "about:blank") {
     // If the page is not iframed or is the about:blank page
     if (!localStorage.getItem('popupFlag')) {
-      if (window.confirm("Enable popups and redirects, then please reload the page.")) {
+      const confirmationResult = window.confirm("Enable popups and redirects, then please reload the page.");
+      if (confirmationResult) {
         // Set the flag in localStorage to "true" after displaying the popup
         localStorage.setItem('popupFlag', 'true');
-
         // Reload the page once the user enables pop-ups and redirects
         location.reload();
       } else {
