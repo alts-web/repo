@@ -1,5 +1,11 @@
 function openNewTab() {
-  window.open("ht://newtab", "_blank");
+  const newTab = window.open("ht://newtab", "_blank");
+
+  if (newTab === null) {
+    return;
+  }
+
+  newTab.focus();
 }
 
 document.addEventListener("keydown", function(event) {
