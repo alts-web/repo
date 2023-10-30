@@ -11,10 +11,12 @@ const bare = createBareServer("/bare/");
 const serve = serveStatic(fileURLToPath(new URL("../static/", import.meta.url)), { fallthrough: false });
 
 const modifyUrl = (req, res, next) => {
-  if (req.url === '/games/') {
-    req.url = '/games'; // Rewrite /gaming/ to /gaming
+  if (req.url === '/games/' && req.method === 'GET') {
+    res.writeHead(301, { Location: '/games' }); // Redirect to /games
+    res.end();
+  } else {
+    next();
   }
-  next();
 };
 
 var server;
