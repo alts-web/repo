@@ -7,7 +7,7 @@ import serveStatic from 'serve-static';
 import path from 'path';
 
 const routes = [
-  { path: '/games', file: 'index.html', directory: 'static/games' },
+  { path: '/games', file: 'games.html', directory: 'static' },
 ];
 
 const bare = createBareServer('/bare/');
