@@ -1,15 +1,7 @@
-function openNewTab() {
-  const newTab = window.open("ht://newtab", "_blank");
-
-  if (newTab === null) {
-    return;
-  }
-
-  newTab.focus();
-}
-
+// shortcuts.js
 document.addEventListener("keydown", function(event) {
   if (event.ctrlKey && event.keyCode === 84) {
-    openNewTab();
+    event.preventDefault();
+    newTab('ht://newtab');
   }
 });
