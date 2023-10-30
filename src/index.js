@@ -6,7 +6,7 @@ import { readFileSync, existsSync } from "node:fs";
 import serveStatic from "serve-static";
 
 const routes = [
-  { path: '/games', file: 'games.html' },
+  { path: '/gaming', file: 'games.html' },
 ];
 
 
