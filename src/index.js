@@ -4,43 +4,49 @@ import { createServer as createHttpsServer } from "node:https";
 import { createServer as createHttpServer } from "node:http";
 import { readFileSync, existsSync } from "node:fs";
 import serveStatic from "serve-static";
+import path from "path";
 
-console.log("Hypertabs\nThis program comes with ABSOLUTELY NO WARRANTY.\nThis is free software, and you are welcome to redistribute it\nunder the terms of the GNU General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nYou should have received a copy of the GNU General Public License\nalong with this program. If not, see <https://www.gnu.org/licenses/>.\n");
+const routes = [
+  { path: '/games', file: 'index.html', directory: 'static/games' },
+];
 
 const bare = createBareServer("/bare/");
 const serve = serveStatic(fileURLToPath(new URL("../static/", import.meta.url)), { fallthrough: false });
 
-const modifyUrl = (req, res, next) => {
-  if (req.url === '/games/' && req.method === 'GET') {
-    res.writeHead(301, { Location: '/games' }); // Redirect to /games
-    res.end();
-  } else {
-    next();
-  }
-};
-
-var server;
-if (existsSync("../ssl/key.pem") && existsSync("../ssl/cert.pem")) {
-  server = createHttpsServer({
-    key: readFileSync("../ssl/key.pem"),
-    cert: readFileSync("../ssl/cert.pem")
-  });
-} else {
-  server = createHttpServer();
-}
+const server = existsSync("../ssl/key.pem") && existsSync("../ssl/cert.pem")
+  ? createHttpsServer({
+      key: readFileSync("../ssl/key.pem"),
+      cert: readFileSync("../ssl/cert.pem")
+    })
+  : createHttpServer();
 
 server.on("request", (req, res) => {
   if (bare.shouldRoute(req)) {
     bare.routeRequest(req, res);
   } else {
-    modifyUrl(req, res, () => {
+    for (const route of routes) {
+      if (req.url === route.path && req.method === 'GET') {
+        const filePath = path.join(__dirname, route.directory, route.file);
+        if (existsSync(filePath)) {
+          const fileContents = readFileSync(filePath, 'utf8');
+          res.writeHead(200, { 'Content-Type': 'text/html' });
+          res.end(fileContents);
+          return;
+        }
+      }
+    }
+
+    if (req.url === '/games/') {
+      res.writeHead(301, { Location: '/games' }); // Redirect /games/ to /games
+      res.end();
+    } else {
       serve(req, res, (err) => {
         res.writeHead(err?.statusCode || 500, null, {
           "Content-Type": "text/plain",
         });
         res.end('Error');
       });
-    });
+    }
   }
 });
 
