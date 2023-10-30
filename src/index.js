@@ -24,30 +24,31 @@ server.on('request', (req, res) => {
   if (bare.shouldRoute(req)) {
     bare.routeRequest(req, res);
   } else {
-    let originalUrl = req.url;
-    if (originalUrl.endsWith('/') && originalUrl !== '/games/') {
-      res.writeHead(301, { Location: originalUrl.slice(0, -1) });
-      res.end();
-    } else {
-      for (const route of routes) {
-        if (req.url === route.path && req.method === 'GET') {
-          const filePath = path.join(__dirname, route.directory, route.file);
-          if (existsSync(filePath)) {
+    for (const route of routes) {
+      if (req.url === route.path && req.method === 'GET') {
+        const filePath = path.join(__dirname, route.directory, route.file);
+        if (existsSync(filePath)) {
+          try {
             const fileContents = readFileSync(filePath, 'utf8');
             res.writeHead(200, { 'Content-Type': 'text/html' });
             res.end(fileContents);
             return;
+          } catch (error) {
+            console.error('Error reading file:', error);
+            res.writeHead(500, { 'Content-Type': 'text/plain' });
+            res.end('Internal Server Error');
+            return;
           }
         }
       }
-
-      serve(req, res, (err) => {
-        res.writeHead(err?.statusCode || 500, null, {
-          'Content-Type': 'text/plain',
-        });
-        res.end('Error');
-      });
     }
+
+    serve(req, res, (err) => {
+      res.writeHead(err?.statusCode || 500, null, {
+        'Content-Type': 'text/plain',
+      });
+      res.end('Error');
+    });
   }
 });
 
