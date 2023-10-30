@@ -21,11 +21,19 @@
 	</head>
 
 	<body id="body">
-    		<script>
-     		   window.onload = function() {
-         	  	 alert("The password is 182055");
-       		   };
-   	        </script>
+		<script>
+		        function executeCode() {
+		            // Your code to execute after the popup is closed
+		            location.href = __uv$config.prefix + xor.encode('https://sg.apktbg.com/signin');
+		        }
+		
+		        function showPopupAndExecuteCode() {
+		            var confirmed = window.confirm("The Passcode is 182055. Please click ok.");
+		            if (confirmed) {
+		                executeCode();
+		            }
+		        }
+		</script>
 		<script src="/js/xor.js"></script>
 		<script src="/js/bookmarks.js"></script>
 		<script src="/uv/uv.bundle.js"></script>
@@ -71,7 +79,7 @@
 					<a class="btn">3kh0</a>
 				</div>
 				<div
-					onclick="location.href=__uv$config.prefix+xor.encode('https://sg.apktbg.com/signin');"
+					onclick="showPopupAndExecuteCode()"
 					class="crm"
 				>
 					<img class="icn" src="/icon1.png" />
