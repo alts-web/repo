@@ -1,17 +1,14 @@
 # Skydiver-Web
 A deployable version of Skydiver-Web.
-Inspired and sourced from Hypertabs.
-Basically a heavily modified faster version and its a spinoff called Skydiver-Web.
+Inspired and sourced heavily from Hypertabs.
+Basically a modified faster version that is a spinoff called Skydiver-Web.
 
-125 Commits Later I Finally Finished. 
+300 Something Commits Later I Finally Finished. 
 
-Website: https://skydiver-web.mooo.com
+Website: https://skydiver-web.hop.sh or https://skydiver-web.1.us-1.fl0.io
 
-Request an account at [Coming Soon!]
-_______________________________________
-This is the future of fast proxies,
-which Skydiver-Web will soon be on Dynamic
-instead of Ultraviolet, 
-which the interstellar team & other developers are working on. This will bring 20ms response times, which improves speed and loading time.
-_______________________________________
-Made By: Skydiver on Github
+Currently optimizing Skydiver-Web to make it as fast as possible, but speed mostly depends on the computer you run it on.
+ ______________________________________
+|   Made By: Skydiver-Web on Github    |
+|      A recreation of Hypertabs       |
+|______________________________________|
