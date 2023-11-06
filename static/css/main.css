@@ -7,7 +7,7 @@ html {
 
 html,
 body {
-  : 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -142,7 +142,7 @@ button:active {
 
 .iframething {
   width: 100%;
-  : 100%;
+  height: 100%;
   outline: none;
   border: 0;
   overflow-y: hidden;
@@ -163,7 +163,7 @@ button:active {
   width: 100%;
   border: hidden;
   background: #202124;
-  : 26px;
+  height: 26px;
   outline: none;
   color: white;
   border-radius: 12px;
@@ -178,7 +178,7 @@ button:active {
 
 .extenico {
   width: 24px;
-  : 24px;
+  height: 24px;
   padding-top: 2px;
   padding-left: 8px;
   padding-right: 4px;
@@ -200,13 +200,13 @@ button:active {
     padding-right: 4px;
   }
   .iframething {
-    : 89.9%;
+    height: 89.9%;
   }
 }
 
 @media only screen and (max-width: 400px) {
   .iframething {
-    : 87.9%;
+    height: 87.9%;
   }
 }
 
@@ -236,28 +236,28 @@ button:active {
 }
 
 .dropdown-content .divider {
-  : 1px;
+  height: 1px;
   width: 147px;
   background: #b3b3b3;
   margin-left: 6px;
 }
 
 .dropdown-content .dividerext {
-  : 1px;
+  height: 1px;
   width: 313px;
   background: #b3b3b3;
   margin-left: 6px;
 }
 
 .dropdown-content .dividerct {
-  : 1px;
+  height: 1px;
   width: 284px;
   background: #b3b3b3;
   margin-left: 6px;
 }
 
 .dropdown-content .dividersua {
-  : 1px;
+  height: 1px;
   width: 313px;
   background: #b3b3b3;
   margin-left: 6px;
@@ -266,7 +266,7 @@ button:active {
 .dropdown-content .inp {
   position: relative;
   top: -1px;
-  : 20px;
+  height: 20px;
 }
 
 .dropdown-content .inp:hover {
@@ -274,7 +274,7 @@ button:active {
 }
 
 div#customtheme {
-  : 553px;
+  height: 553px;
 }
 
 .th {
