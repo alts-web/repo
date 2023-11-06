@@ -3,7 +3,7 @@ A deployable version of Skydiver-Web.
 Inspired and sourced heavily from Hypertabs.
 Basically a modified faster version that is a spinoff called Skydiver-Web.
 
-300 Something Commits Later I Finally Finished. 
+500 Something Commits Later And I'm Still Updating It.
 
 Website: https://skydiver-web.hop.sh or https://skydiver-web.1.us-1.fl0.io
 
