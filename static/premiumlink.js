@@ -9,7 +9,7 @@
                 document.body.style.display = 'block';
             } else {
                 alert('Invalid password you little nigga.');
-                window.location.href = 'https://skydiver-web.1.us-1.fl0.io';
+                window.location.href = 'location.reload';
             }
         }
         if (document.body.style.display !== 'block') {
