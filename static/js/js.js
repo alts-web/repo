@@ -61,7 +61,7 @@ const getActiveFrameId = () => {
 		);
 	return null;
 };
-document.title = 'Inbox - RoundRock ISD Mail'; // New Title :)
+document.title = 'Edficiency | Intervention Scheduling Software'; // New Title :)
 function addPageToHistory(id, page) {
 	if (!sir) {
 		sir = true;
