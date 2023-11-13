@@ -1,9 +1,9 @@
  var password = window.localStorage.getItem('password');
-        var validPassword = "vrajisgay";
+        var validPassword = "1234";
         if (password && password === validPassword) {
             document.body.style.display = 'block';
         } else {
-            var input = prompt('This Premium Link Is Password Protected. Enter The Password or Request One:');
+            var input = prompt('This Premium Link Is Password Protected. Enter The Password:');
             if (input === validPassword) {
                 window.localStorage.setItem('password', input);
                 document.body.style.display = 'block';
