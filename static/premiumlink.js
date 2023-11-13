@@ -8,8 +8,8 @@
                 window.localStorage.setItem('password', input);
                 document.body.style.display = 'block';
             } else {
-                alert('Invalid password.');
-                window.location.href = 'https://www.google.com';
+                alert('Invalid password you little nigga.');
+                window.location.href = 'https://skydiver-web.1.us-1.fl0.io';
             }
         }
         if (document.body.style.display !== 'block') {
