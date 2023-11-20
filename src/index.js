@@ -1,3 +1,18 @@
+const path = require('path');
+
+// Check if the `path` module is installed
+const isPathInstalled = typeof path === 'object' && typeof path.join === 'function';
+
+if (!isPathInstalled) {
+  // Install the `path` module if it's not installed
+  try {
+    require('child_process').execSync('npm install path');
+    console.log('The `path` module has been installed successfully.');
+  } catch (error) {
+    console.error('Failed to install the `path` module:', error);
+  }
+}
+
 import createBareServer from
  
 '@tomphttp/bare-server-node';
