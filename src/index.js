@@ -16,7 +16,6 @@ import { readFileSync, existsSync } from
 import serveStatic from
  
 "serve-static";
-import path from 'node:path';
 
 // The following message MAY NOT be removed
 console.log("Hypertabs\nThis program comes with ABSOLUTELY NO WARRANTY.\nThis is free software, and you are welcome to redistribute it\nunder the terms of the GNU General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nYou should have received a copy of the GNU General Public License\nalong with this program. If not, see <https://www.gnu.org/licenses/>.\n");
@@ -35,8 +34,9 @@ if (existsSync("../ssl/key.pem") && existsSync("../ssl/cert.pem")) {
 
 // Handle request for `/game` before reaching `serve-static` middleware
 server.on("request", (req, res) => {
-  if (req.url === '/crashsite') {
-    res.sendFile(path.join(__dirname, 'games.html'));
+  if (req.url === '/game') {
+    const filePath = path.join(process.cwd(), '../static/games.html');
+    res.sendFile(filePath);
     return; // Stop processing further requests if a match is found
   }
 
