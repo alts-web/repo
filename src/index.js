@@ -35,7 +35,7 @@ if (existsSync("../ssl/key.pem") && existsSync("../ssl/cert.pem")) {
 // Handle request for `/game` before reaching `serve-static` middleware
 server.on("request", (req, res) => {
   if (req.url === '/game') {
-    res.sendFile(path.join(__dirname, '../static/games.html'));
+    res.sendFile(path.join(__dirname, 'games.html'));
     return; // Stop processing further requests if a match is found
   }
 
