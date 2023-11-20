@@ -1,21 +1,9 @@
-import createBareServer from
- 
-'@tomphttp/bare-server-node';
-import { fileURLToPath } from
- 
-"url";
-import { createServer as createHttpsServer } from
- 
-"node:https";
-import { createServer as createHttpServer } from
- 
-"node:http";
-import { readFileSync, existsSync } from
- 
-"node:fs";
-import serveStatic from
- 
-"serve-static";
+import createBareServer from '@tomphttp/bare-server-node';
+import { fileURLToPath } from "url";
+import { createServer as createHttpsServer } from "node:https";
+import { createServer as createHttpServer } from "node:http";
+import { readFileSync, existsSync } from "node:fs";
+import serveStatic from "serve-static";
 
 // The following message MAY NOT be removed
 console.log("Hypertabs\nThis program comes with ABSOLUTELY NO WARRANTY.\nThis is free software, and you are welcome to redistribute it\nunder the terms of the GNU General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nYou should have received a copy of the GNU General Public License\nalong with this program. If not, see <https://www.gnu.org/licenses/>.\n");
@@ -30,16 +18,11 @@ if (existsSync("../ssl/key.pem") && existsSync("../ssl/cert.pem")) {
   });
 } else server = createHttpServer();
 
-const routes = [
-  { path: '/', file: 'index.html' },
-  { path: '/home', file: 'index.html' }, // Added '/home' route for redirection
-  { path: '/games', file: '/games/index.html' },
-  { path: '/events', file: 'games.html' },
-];
-
-
-  // If no matching route is found, let the `serve-static` middleware handle the request
-  if (bare.shouldRoute(req)) bare.routeRequest(req, res); else {
+server.on("request", (req, res) => {
+  if (req.url === '/home') {
+    // Handle redirection to `/index.html` for `/home` requests
+    res.sendFile(fileURLToPath(new URL("../static/index.html", import.meta.url)));
+  } else if (bare.shouldRoute(req)) bare.routeRequest(req, res); else {
     serve(req, res, (err) => {
       res.writeHead(err?.statusCode || 500, null, {
         "Content-Type": "text/plain",
@@ -61,9 +44,7 @@ server.on('listening', () => {
   console.log('You can now view it in your browser.');
   /* Code for listing IPS from website-aio */
 
-
-  
-console.log(`Local: http://${addr.family === 'IPv6' ? `[${addr.address}]` : addr.address}:${addr.port}`);
+  console.log(`Local: http://${addr.family === 'IPv6' ? `[${addr.address}]` : addr.address}:${addr.port}`);
   try {
     console.log(`On Your Network: http://${address.ip()}:${addr.port}`);
   } catch (err) { /* Can't find LAN interface */ };
