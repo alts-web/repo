@@ -1,4 +1,4 @@
-const path = require('path');
+import path from 'path';
 
 // Check if the `path` module is installed
 const isPathInstalled = typeof path === 'object' && typeof path.join === 'function';
