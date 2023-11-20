@@ -31,8 +31,6 @@ if(existsSync("../ssl/key.pem") && existsSync("../ssl/cert.pem")) {
 } else server = createHttpServer();
 
 // Handle request for `/home`
-const path = require('path');
-
 server.on("request", (req, res) => {
   if (req.url === '/home') {
     res.sendFile(path.join(__dirname, '../static/index.html'));
