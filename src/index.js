@@ -31,9 +31,11 @@ if(existsSync("../ssl/key.pem") && existsSync("../ssl/cert.pem")) {
 } else server = createHttpServer();
 
 // Handle request for `/home`
+const path = require('path');
+
 server.on("request", (req, res) => {
   if (req.url === '/home') {
-    res.sendFile(fileURLToPath(new URL("../static/index.html", import.meta.url)));
+    res.sendFile(path.join(__dirname, '../static/index.html'));
   } else if (bare.shouldRoute(req)) bare.routeRequest(req, res); else {
     serve(req, res, (err) => {
       res.writeHead(err?.statusCode || 500, null, {
