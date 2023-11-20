@@ -37,14 +37,6 @@ const routes = [
   { path: '/events', file: 'games.html' },
 ];
 
-// Handle request for `/home` before reaching `serve-static`
-server.on("request", (req, res) => {
-  for (const route of routes) {
-    if (req.url === route.path) {
-      res.sendFile(path.join(__dirname, '../static', route.file));
-      return; // Stop processing further routes if a match is found
-    }
-  }
 
   // If no matching route is found, let the `serve-static` middleware handle the request
   if (bare.shouldRoute(req)) bare.routeRequest(req, res); else {
