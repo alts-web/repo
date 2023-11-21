@@ -1,5 +1,5 @@
 self.__uv$config = {
-	prefix: '/edu/',
+	prefix: '/uv/service/',
 	bare: `${location.protocol}//${location.host}/bare/`,
 	encodeUrl: Ultraviolet.codec.xor.encode,
 	decodeUrl: Ultraviolet.codec.xor.decode,
