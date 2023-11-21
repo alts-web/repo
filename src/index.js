@@ -36,11 +36,7 @@ app.use(serveStatic);
 
 const routes = [
   { path: '/', file: 'index.html' },
-  { path: '/news', file: 'apps.html' },
-  { path: '/events', file: 'games.html' },
-  { path: '/diagnostic', file: 'settings.html' },
-  { path: '/local-news', file: 'tabs.html' },
-  { path: '/image-galleries', file: 'go.html' },
+  { path: '/gaming', file: 'gaming.html' },
 ];
 
 routes.forEach((route) => {
