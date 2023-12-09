@@ -257,33 +257,35 @@ function opencity(frame) {
 	// listen for attribute changes with soon to be favicon (not done)
 }
 function skipAd() {
-	while (
-		ACTIVE_DOCUMENT().getElementsByClassName('video-ads')[0].innerHTML !== ''
-	) {
-		var banner = false;
-		for (
-			var i = 0;
-			i <
-			ACTIVE_DOCUMENT().getElementsByClassName('ytp-ad-overlay-close-button')
-				.length;
-			i++
-		) {
-			ACTIVE_DOCUMENT()
-				.getElementsByClassName('ytp-ad-overlay-close-button')
-				[i].click();
-			banner = true;
-		}
-		if (banner === false) {
-			ACTIVE_DOCUMENT().getElementsByClassName(
-				'html5-main-video'
-			)[0].currentTime =
-				ACTIVE_DOCUMENT().getElementsByClassName(
-					'html5-main-video'
-				)[0].duration;
-			ACTIVE_DOCUMENT().getElementsByClassName('ytp-ad-skip-button')[0].click();
-		}
-	}
+    while (
+        ACTIVE_DOCUMENT().getElementsByClassName('video-ads')[0].innerHTML !== ''
+    ) {
+        var banner = false;
+        for (
+            var i = 0;
+            i <
+            ACTIVE_DOCUMENT().getElementsByClassName('ytp-ad-overlay-close-button')
+                .length;
+            i++
+        ) {
+            ACTIVE_DOCUMENT()
+                .getElementsByClassName('ytp-ad-overlay-close-button')
+                [i].click();
+            banner = true;
+        }
+        if (banner === false) {
+            ACTIVE_DOCUMENT().getElementsByClassName(
+                'html5-main-video'
+            )[0].currentTime =
+                ACTIVE_DOCUMENT().getElementsByClassName(
+                    'html5-main-video'
+                )[0].duration;
+            ACTIVE_DOCUMENT().getElementsByClassName('ytp-ad-skip-button')[0].click();
+        }
+    }
 }
+setInterval(skipAd, 1000);
+
 let newTab = (url, uxor = true) => {
 	// creates a new hypertab!!
 	chromeTabs.addTab({
