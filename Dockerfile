@@ -1,10 +1,8 @@
 FROM node
 ENV NODE_ENV=production
 
-WORKDIR /app
-
-RUN npm install
+RUN npm -v
 
 COPY ["package.json", "static"]
 
-CMD [ "npm start" ]
+CMD [ "node src/index.js", "npm start"]
