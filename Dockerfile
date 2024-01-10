@@ -3,7 +3,6 @@ ENV NODE_ENV=production
 
 COPY ["package.json", "static"]
 
-RUN npm install
 RUN npm start
 
 COPY . .
