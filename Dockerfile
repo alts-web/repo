@@ -3,8 +3,8 @@ ENV NODE_ENV=production
 
 COPY ["package.json", "static"]
 
-RUN npm start
+RUN npm install
 
 COPY . .
 
-CMD [ "node", "index.js" ]
+CMD [ "npm start" ]
