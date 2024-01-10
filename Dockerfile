@@ -1,7 +1,9 @@
 FROM node
 ENV NODE_ENV=production
 
-CMD [ "npm install" ]
+WORKDIR /app
+
+RUN npm install
 
 COPY ["package.json", "static"]
 
