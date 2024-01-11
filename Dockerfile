@@ -1,8 +1,12 @@
 FROM node
 ENV NODE_ENV=production
 
-RUN npm install -g npm@8.0.0 
+WORKDIR /app
 
-COPY ["/package.json", "static"]
+COPY ["package.json", "./"]
 
-CMD ["npm", "start"]
+RUN npm install -g npm@8.0.0
+
+COPY . .
+
+CMD [ "node", "index.js" ]
