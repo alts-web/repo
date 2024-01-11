@@ -1,7 +1,7 @@
 {
-  "name": "Proxy",
-  "version": "1.0.0",
-  "description": "Unofficial Proxy easy deployment version with TompHTTP bare server included.",
+  "name" "Proxy",
+  "version" "1.0.0",
+  "description" "Unofficial Proxy easy deployment version with TompHTTP bare server included.",
   "type": "module",
   "scripts": {
     "start": "node src/index.js"
