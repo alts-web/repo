@@ -1,9 +1,9 @@
 FROM node
 ENV NODE_ENV=production
 
-WORKDIR /src
+WORKDIR /static
 
-COPY ["package.json", "./"]
+COPY ["package.json", "index.js"]
 
 RUN npm install -g npm@8.0.0
 
