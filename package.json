@@ -1,4 +1,5 @@
 {
+  "name": "Proxy",
   "version": "1.0.0",
   "description": "Unofficial Proxy easy deployment version with TompHTTP bare server included.",
   "type": "module",
