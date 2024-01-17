@@ -1,14 +1,14 @@
  var password = window.localStorage.getItem('password');
-        var validPassword = "1234";
+        var validPassword = "decker", "Decker";
         if (password && password === validPassword) {
             document.body.style.display = 'block';
         } else {
-            var input = prompt('This Premium Link Is Password Protected. Enter The Password:');
+            var input = prompt('Enter The Password For This Premium Link:');
             if (input === validPassword) {
                 window.localStorage.setItem('password', input);
                 document.body.style.display = 'block';
             } else {
-                alert('Invalid password you little nigga.');
+                alert('Invalid Password. Please send an email to this address to get the password - contact@edficiency.school');
                 window.location.href = 'index.html';
             }
         }
