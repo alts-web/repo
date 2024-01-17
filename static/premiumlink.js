@@ -5,6 +5,7 @@
         } else {
             var input = prompt('This Premium Link Is Password Protected. Enter The Password:');
             if (input === validPassword) {
+                alert("Please do not leak the password.");
                 window.localStorage.setItem('password', input);
                 document.body.style.display = 'block';
             } else {
