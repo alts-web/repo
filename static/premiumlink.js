@@ -7,7 +7,6 @@
             if (input === validPassword) {
                 window.localStorage.setItem('password', input);
                 document.body.style.display = 'block';
-                alert("Please do not leak the password.");
             } else {
                 alert('Invalid Password. Please send an email to this address to get the password - contact@edficiency.school');
                 window.location.href = 'index.html';
