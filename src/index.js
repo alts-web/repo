@@ -59,7 +59,7 @@ app.get("/computer", async (req, res) => {
     "https://engine.hyperbeam.com/v0/vm",
     {},
     {
-      headers: { Authorization: `Bearer ${process.env.sk_test_fFGiDpw7fL0-35dvQLg8Ub8y9qQX2KKRSGBpHN5fQeo}` },
+      headers: { Authorization: `Bearer ${process.env.HB_API_KEY}` },
     }
   );
   computer = resp.data;
