@@ -1,0 +1,18 @@
+<div style="font-family: sans-serif">
+  <button id="gotoYouTubeBtn">Open Youtube.com</button>
+  <p>Current website: <span id="currentSite"></p>
+</div>
+<div id="virtualComputerDiv" style="height:720px;width:1280px"></div>
+<script type="module">
+  import Hyperbeam from "https://unpkg.com/@hyperbeam/web@latest/dist/index.js"
+  const resp = await fetch("/computer")
+  const data = await resp.json()
+  const hb = await Hyperbeam(virtualComputerDiv, data.embed_url)
+  gotoYouTubeBtn.addEventListener("click", () => {
+    hb.tabs.update({ url: "https://youtube.com" }) // Programmatic navigation
+  })
+  hb.tabs.onUpdated.addListener((tabId, changeInfo) => {
+    if (changeInfo.title)
+      currentSite.innerText = changeInfo.title // Listen to tab changes
+  })
+</script>
