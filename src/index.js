@@ -44,5 +44,27 @@ server.on('listening', () => {
 	try { console.log(`On Your Network: http://${address.ip()}:${addr.port}`); } catch (err) {/* Can't find LAN interface */};
 	if(process.env.REPL_SLUG && process.env.REPL_OWNER) console.log(`Replit: https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`);
 });
+const express = require("express");
+const axios = require("axios");
+const app = express();
+let computer;
 
+// Get a virtual computer object. If no object exists, create it.
+app.get("/computer", async (req, res) => {
+  if (computer) {
+    res.send(computer);
+    return;
+  }
+  const resp = await axios.post(
+    "https://engine.hyperbeam.com/v0/vm",
+    {},
+    {
+      headers: { Authorization: `Bearer ${process.env.sk_test_fFGiDpw7fL0-35dvQLg8Ub8y9qQX2KKRSGBpHN5fQeo}` },
+    }
+  );
+  computer = resp.data;
+  res.send(computer);
+});
+
+app.listen(8080, () => console.log("Server start at http://localhost:8080"));
 server.listen({ port: (process.env.PORT || 8080) })
