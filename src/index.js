@@ -44,8 +44,8 @@ server.on('listening', () => {
 	try { console.log(`On Your Network: http://${address.ip()}:${addr.port}`); } catch (err) {/* Can't find LAN interface */};
 	if(process.env.REPL_SLUG && process.env.REPL_OWNER) console.log(`Replit: https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`);
 });
-const express = require("express");
-const axios = require("axios");
+const express = import("express");
+const axios = import("axios");
 const app = express();
 let computer;
 
