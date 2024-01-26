@@ -7,7 +7,7 @@ import serveStatic from "serve-static";
 const path = require('path')
 const express = require('express')
 const axios = require('axios')
-const app = express()
+import express from 'express'
 
 // The following message MAY NOT be removed
 console.log("Hypertabs\nThis program comes with ABSOLUTELY NO WARRANTY.\nThis is free software, and you are welcome to redistribute it\nunder the terms of the GNU General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nYou should have received a copy of the GNU General Public License\nalong with this program. If not, see <https://www.gnu.org/licenses/>.\n");
