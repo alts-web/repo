@@ -3,10 +3,10 @@ import { fileURLToPath } from "url";
 import { createServer as createHttpsServer } from "node:https";
 import { createServer as createHttpServer } from "node:http";
 import { readFileSync, existsSync } from "node:fs";
+import serveStatic from "serve-static";
 import path from 'node:path';
 import express from 'express'
-const app = express(server);
-import serveStatic from "serve-static";
+const app = express();
 
 
 // The following message MAY NOT be removed
