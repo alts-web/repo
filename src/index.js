@@ -5,7 +5,7 @@ import { createServer as createHttpServer } from "node:http";
 import { readFileSync, existsSync } from "node:fs";
 import serveStatic from "serve-static";
 import path from 'node:path';
-import express from 'express'
+const express = require('express')
 const app = express();
 
 
