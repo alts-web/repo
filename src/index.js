@@ -4,9 +4,9 @@ import { createServer as createHttpsServer } from "node:https";
 import { createServer as createHttpServer } from "node:http";
 import { readFileSync, existsSync } from "node:fs";
 import path from 'node:path'
+import express from 'express'
+import cors from 'cors'
 import serveStatic from "serve-static";
-const express = require('express')
-const axios = require('axios')
 
 
 // The following message MAY NOT be removed
