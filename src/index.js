@@ -5,7 +5,6 @@ import { createServer as createHttpServer } from "node:http";
 import { readFileSync, existsSync } from "node:fs";
 import path from 'node:path'
 import serveStatic from "serve-static";
-const path = require('path')
 const express = require('express')
 const axios = require('axios')
 
