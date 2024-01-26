@@ -4,7 +4,7 @@ import { createServer as createHttpsServer } from "node:https";
 import { createServer as createHttpServer } from "node:http";
 import { readFileSync, existsSync } from "node:fs";
 import path from 'node:path';
-import cors from 'node:cors';
+import cors from 'cors';
 import serveStatic from "serve-static";
 
 
