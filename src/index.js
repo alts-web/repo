@@ -4,10 +4,6 @@ import { createServer as createHttpsServer } from "node:https";
 import { createServer as createHttpServer } from "node:http";
 import { readFileSync, existsSync } from "node:fs";
 import serveStatic from "serve-static";
-import path from 'node:path';
-const express = require('express')
-const app = express();
-
 
 // The following message MAY NOT be removed
 console.log("Hypertabs\nThis program comes with ABSOLUTELY NO WARRANTY.\nThis is free software, and you are welcome to redistribute it\nunder the terms of the GNU General Public License as published by\nthe Free Software Foundation, either version 3 of the License, or\n(at your option) any later version.\n\nYou should have received a copy of the GNU General Public License\nalong with this program. If not, see <https://www.gnu.org/licenses/>.\n");
@@ -36,10 +32,6 @@ server.on("request", (req, res) => {
 server.on("upgrade", (req, socket, head) => {
   if(bare.shouldRoute(req, socket, head)) bare.routeUpgrade(req, socket, head); else socket.end();
 });
-
-app.get('/home', (req, res) => {
-  res.sendFile(path.join(__dirname, '/index.html'))
-})
 
 server.on('listening', () => {
   const addr = server.address();
