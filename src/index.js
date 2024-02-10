@@ -27,8 +27,6 @@ server.on("request", (req, res) => {
       res.end('Error')
     })
   }
-  res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-  res.setHeader("Expires", "0");
 });
 
 server.on("upgrade", (req, socket, head) => {
